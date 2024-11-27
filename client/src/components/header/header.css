@@ -1,0 +1,222 @@
+.header {
+    background-color: white;
+    padding: 20px 0;
+    position: relative;
+    border-bottom: 1px solid #ebebeb;
+  }
+  
+  .headerContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+  }
+  
+  .headerSearchBar {
+    display: flex;
+    align-items: center;
+    max-width: 850px;
+    margin: 0 auto;
+    background-color: white;
+    border: 1px solid #dddddd;
+    border-radius: 40px;
+    padding: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.2s ease;
+  }
+  
+  .headerSearchBar:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+  }
+  
+  .searchItem {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    padding: 0 16px;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .searchIcon {
+    color: #FF385C;
+    margin-right: 12px;
+    font-size: 22px;
+  }
+  
+  .searchInput {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  
+  .searchTitle {
+    font-size: 12px;
+    font-weight: 600;
+    color: #222222;
+  }
+  
+  .headerSearchInput {
+    border: none;
+    outline: none;
+    padding: 4px 0;
+    font-size: 14px;
+    color: #222222;
+    width: 100%;
+  }
+  
+  .dateText, .guestText {
+    font-size: 14px;
+    color: #717171;
+  }
+  
+  .searchSeparator {
+    width: 1px;
+    height: 24px;
+    background-color: #dddddd;
+  }
+  
+  .headerSearchButton {
+    background-color: #FF385C;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    margin-left: 8px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .headerSearchButton:hover {
+    background-color: #D70466;
+  }
+  
+  /* Date Range Picker Styles */
+  .dateRangeWrapper {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 12px;
+    z-index: 1000;
+  }
+  
+  .dateRange {
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 8px 16px rgba(0, 0, 0, 0.15);
+    padding: 16px;
+  }
+  
+  /* Options Popup Styles */
+  .optionsWrapper {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 12px;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 8px 16px rgba(0, 0, 0, 0.15);
+    padding: 16px;
+    min-width: 280px;
+    z-index: 1000;
+  }
+  
+  .optionItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+  }
+  
+  .optionItem:not(:last-child) {
+    border-bottom: 1px solid #ebebeb;
+  }
+  
+  .optionText {
+    font-size: 16px;
+    color: #222222;
+  }
+  
+  .optionCounter {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .optionCounterButton {
+    width: 32px;
+    height: 32px;
+    border: 1px solid #b0b0b0;
+    border-radius: 50%;
+    background-color: white;
+    color: #222222;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+  }
+  
+  .optionCounterButton:hover:not(:disabled) {
+    border-color: #222222;
+  }
+  
+  .optionCounterButton:disabled {
+    border-color: #ebebeb;
+    color: #ebebeb;
+    cursor: not-allowed;
+  }
+  
+  .optionCounterNumber {
+    font-size: 16px;
+    color: #222222;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .headerSearchBar {
+      flex-direction: column;
+      border-radius: 16px;
+      padding: 16px;
+      gap: 16px;
+    }
+  
+    .searchSeparator {
+      width: 100%;
+      height: 1px;
+      margin: 8px 0;
+    }
+  
+    .searchItem {
+      width: 100%;
+      padding: 8px 0;
+    }
+  
+    .headerSearchButton {
+      width: 100%;
+      justify-content: center;
+      margin-left: 0;
+      margin-top: 8px;
+    }
+  
+    .dateRangeWrapper {
+      left: 0;
+      right: 0;
+      transform: none;
+    }
+  
+    .dateRange {
+      width: 100%;
+    }
+  
+    .optionsWrapper {
+      left: 0;
+      right: 0;
+      width: auto;
+    }
+  }

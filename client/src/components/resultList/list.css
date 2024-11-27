@@ -1,0 +1,39 @@
+/* list.css */
+
+.list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Creates 4 equal columns */
+    gap: 24px; /* Space between cards */
+    padding: 24px;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+  
+  .link {
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1200px) {
+    .list {
+      grid-template-columns: repeat(3, 1fr); /* 3 cards per row on medium screens */
+    }
+  }
+  
+  @media (max-width: 900px) {
+    .list {
+      grid-template-columns: repeat(2, 1fr); /* 2 cards per row on tablet screens */
+      gap: 16px;
+      padding: 16px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .list {
+      grid-template-columns: 1fr; /* 1 card per row on mobile screens */
+      gap: 16px;
+      padding: 12px;
+    }
+  }

@@ -1,0 +1,271 @@
+/* houseDetails.css */
+
+.house-details {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .details-container {
+    margin-top: 30px;
+  }
+  
+  /* Header Styles */
+  .details-header {
+    margin-bottom: 24px;
+  }
+  
+  .details-header h1 {
+    font-size: 26px;
+    font-weight: 600;
+    color: #222222;
+    margin-bottom: 12px;
+  }
+  
+  .sub-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: #222222;
+  }
+  
+  .rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  .rating svg {
+    color: #FF385C;
+  }
+  
+  .location {
+    font-size: 14px;
+  }
+  
+  .actions {
+    margin-left: auto;
+    display: flex;
+    gap: 16px;
+  }
+  
+  .action-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: #222222;
+    transition: all 0.2s ease;
+  }
+  
+  .action-btn:hover {
+    background-color: #f7f7f7;
+    border-radius: 8px;
+  }
+  
+  /* Image Grid Styles */
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 8px;
+    height: 450px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 48px;
+  }
+  
+  .image-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  .image-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .image-item:hover img {
+    transform: scale(1.05);
+  }
+  
+  .main-image {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+  
+  /* Content Styles */
+  .details-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 80px;
+    padding-top: 24px;
+    border-top: 1px solid #dddddd;
+  }
+  
+  .left-content {
+    padding-right: 24px;
+  }
+  
+  .description h2 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #222222;
+    margin-bottom: 16px;
+  }
+  
+  .description p {
+    color: #717171;
+    line-height: 1.5;
+    font-size: 16px;
+  }
+  
+  /* Booking Card Styles */
+  .booking-card {
+    position: sticky;
+    top: 100px;
+    padding: 24px;
+    border: 1px solid #dddddd;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    background-color: white;
+  }
+  
+  .price {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  
+  .price .amount {
+    font-weight: 600;
+  }
+  
+  .dates {
+    padding: 16px 0;
+    border-bottom: 1px solid #dddddd;
+    margin-bottom: 16px;
+  }
+  
+  .dates p {
+    color: #717171;
+    font-size: 14px;
+  }
+  
+  .reserve-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #FF385C;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .reserve-btn:hover {
+    background-color: #E31C5F;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .details-content {
+      gap: 40px;
+    }
+    
+    .image-grid {
+      height: 400px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .details-content {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  
+    .image-grid {
+      height: 350px;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+    }
+  
+    .booking-card {
+      position: static;
+      margin-top: 24px;
+    }
+  
+    .left-content {
+      padding-right: 0;
+    }
+  
+    .actions {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .house-details {
+      padding: 16px;
+    }
+  
+    .details-header h1 {
+      font-size: 22px;
+    }
+  
+    .image-grid {
+      height: 300px;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+  
+    .main-image {
+      grid-column: span 1;
+      grid-row: span 1;
+      height: 250px;
+    }
+  
+    .image-item:not(.main-image) {
+      display: none;
+    }
+  
+    .sub-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+  
+    .booking-card {
+      padding: 16px;
+    }
+  }
+  
+  /* Optional: Add smooth scrolling for the whole page */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Optional: Add a hover effect for the entire booking card */
+  .booking-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  }
+  
+  /* Optional: Add style for when images are loading */
+  .image-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f7f7f7;
+    z-index: -1;
+  }

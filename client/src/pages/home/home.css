@@ -1,0 +1,24 @@
+.popular {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.list {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+
+
+.link {
+    flex: 0 0 auto; /* Don't grow or shrink */
+    text-decoration: none;
+    color: inherit;
+}
+
