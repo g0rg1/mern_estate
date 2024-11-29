@@ -97,7 +97,7 @@ export const verifyUser = async (req, res) => {
       }
       const user = await User.findById(data.id);
       if (user) {
-        res.json({ status: true, user: user.name });
+        res.json({ status: true, user: user.name , isAdmin: user.isAdmin});
       } else {
         res.json({ status: false });
       }

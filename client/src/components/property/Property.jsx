@@ -11,13 +11,13 @@ const Property = ({ imageUrl, location, title, rating, pricePerNight }) => {
       </div>
       <div className="content">
         <div className="header">
-          <h3 className="location">{location}</h3>
+          <h3 className="location">{title}</h3>
           <div className="rating">
             <FaStar className="star" />
             <span>{rating}</span>
           </div>
         </div>
-        <p className="title">{title}</p>
+        <p className="title">{location}</p>
         <p className="price">
           <span className="pricePerNight">${pricePerNight}</span> night
         </p>

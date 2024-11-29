@@ -1,0 +1,112 @@
+.my-reservations {
+    min-height: 100vh;
+    background-color: #f7f7f7;
+    padding-top: 80px; /* Add space for navbar */
+  }
+  
+  .reservations-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .reservations-container h1 {
+    color: #222;
+    margin-bottom: 30px;
+    font-size: 28px;
+  }
+  
+  .bookings-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    width: 100%;
+  }
+  
+  .booking-card {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+    height: 100%;
+    position: relative;
+  }
+  
+  .booking-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+  
+  .booking-image {
+    width: 100%;
+    height: 200px;
+    position: relative;
+  }
+  
+  .booking-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+  
+  .booking-info {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .booking-info h3 {
+    margin: 0;
+    color: #222;
+    font-size: 20px;
+  }
+  
+  .booking-info p {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  
+  .booking-info .location {
+    color: #ff385c;
+    font-weight: 500;
+  }
+  
+  .booking-info .price {
+    font-weight: 600;
+    color: #222;
+  }
+  
+  .booking-info .status {
+    text-transform: capitalize;
+    color: #00a699;
+  }
+  
+  .loading-text,
+  .no-bookings {
+    text-align: center;
+    color: #666;
+    font-size: 16px;
+    padding: 40px 0;
+  }
+  
+  @media (max-width: 768px) {
+    .bookings-list {
+      grid-template-columns: 1fr;
+    }
+    
+    .reservations-container {
+      padding: 15px;
+    }
+    
+    .booking-card {
+      max-width: 100%;
+    }
+  }

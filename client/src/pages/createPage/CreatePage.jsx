@@ -43,10 +43,8 @@ const CreatePage = () => {
   };
 
   const handleError = (err) => toast.error(err, { position: "bottom-left" });
-  const handleSuccess = (msg) =>
-    toast.success(msg, { position: "bottom-right" });
-
   const navigate = useNavigate();
+  const handleSuccess = (msg) => navigate("/");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -74,7 +72,6 @@ const CreatePage = () => {
       handleError("An error occurred while submitting the form.");
     }
 
-    // Сброс формы после отправки
     setFormData({
       name: "",
       city: "",
@@ -82,7 +79,7 @@ const CreatePage = () => {
       price: "",
       location: "",
       rating: "",
-      images: ["", "", "", ""], // Сбросить изображения
+      images: ["", "", "", "", ""], // Сбросить изображения
     });
   };
 
@@ -238,6 +235,18 @@ const CreatePage = () => {
                       name="image_3"
                       placeholder="Bed image"
                       value={images[3]}
+                      onChange={handleOnChange}
+                    />
+                  </div>
+                </div>
+                <div className="input-group">
+                  <div className="input-wrapper">
+                    <CiImageOn className="input-icon" />
+                    <input
+                      type="text"
+                      name="image_4"
+                      placeholder="Hall image"
+                      value={images[4]}
                       onChange={handleOnChange}
                     />
                   </div>

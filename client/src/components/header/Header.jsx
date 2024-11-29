@@ -37,8 +37,9 @@ function Header() {
   };
 
   const handleSearch = () => {
-    navigate("/houses", { state: { destination, date, options } });
+    navigate("/houses", { state: { destination:destination.trim(), date, options } });
   };
+  
 
   return (
     <div className="header">

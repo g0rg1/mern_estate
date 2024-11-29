@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 function Navbar() {
   const [isUser, setIsUser] = useState(false);
   const [username, setUsername] = useState(null);
+  const [admin, setAdmin] = useState(false);
 
   useEffect(() => {
     // Проверка на наличие токена
@@ -18,6 +19,7 @@ function Navbar() {
           if (response.data.status) {
             setIsUser(true);
             setUsername(response.data.user);
+            setAdmin(response.data.isAdmin);
           }
         })
         .catch((err) => {
@@ -44,8 +46,16 @@ function Navbar() {
             <p>
               Welcome <span className="username">{username}</span>
             </p>
+            {admin ? (
+              <Link className="nav-link" to="/admin">
+                <button className="host">Admin</button>
+              </Link>
+            ) : null}
             <Link className="nav-link" to="/create">
               <button className="host">Become a host</button>
+            </Link>
+            <Link className="nav-link" to="/reservation">
+              <button className="host">My reservations</button>
             </Link>
             <button onClick={handleLogout} className="register">
               Logout

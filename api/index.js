@@ -5,13 +5,14 @@ import houseRouter from "./routes/house.router.js";
 import userRouter from "./routes/user.route.js";
 import authRouter from "./routes/auth.router.js";
 import cookieParser from "cookie-parser";
+import bookingRouter from "./routes/booking.router.js";
 import cors from "cors";
 
 const app = express();
 app.use(
   cors({
-    origin: "http://localhost:5173", // Replace with your frontend URL
-    credentials: true, // Allow credentials (cookies)
+    origin: "http://localhost:5173",
+    credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
@@ -21,6 +22,7 @@ app.use(cookieParser());
 app.use("/user", userRouter);
 app.use("/auth", authRouter);
 app.use("/house", houseRouter);
+app.use("/booking", bookingRouter);
 
 dotenv.config();
 

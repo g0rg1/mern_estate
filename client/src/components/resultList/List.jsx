@@ -11,12 +11,13 @@ function List({ search }) {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get(
-          `http://localhost:5500/house/city/${search.destination}`,
-          {
-            withCredentials: true,
-          }
-        );
+        const url = destination
+        ? `http://localhost:5500/house/city/${destination}`
+        : 'http://localhost:5500/house';
+      
+      const response = await axios.get(url, {
+        withCredentials: true,
+      });
         setData(response.data);
       } catch (e) {
         console.error(e);

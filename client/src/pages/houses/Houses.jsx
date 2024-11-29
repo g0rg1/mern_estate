@@ -12,7 +12,7 @@ function Houses() {
     <>
       <Navbar />
       <Header />
-      <h1>Results for {destination}</h1>
+      <h1>{destination ? `Result for ${destination}` : `All properties`}</h1>
       <List search={location.state} />
       <Footer />
     </>

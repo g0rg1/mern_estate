@@ -6,6 +6,8 @@ import "./App.css";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import CreatePage from "./pages/createPage/createPage";
+import MyReservations from "./pages/reservations/MyReservations";
+import Admin from "./pages/admin/Admin";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/create" element={<CreatePage />} />
+          <Route path="/reservation" element={<MyReservations />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
       </BrowserRouter>
     </>

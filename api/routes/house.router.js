@@ -13,10 +13,10 @@ import { verifyToken, verifyAdmin } from "../middleware/auth.js";
 const houseRouter = new Router();
 
 houseRouter.get("/", getHouses);
-houseRouter.get("/find/:id", getHouse);
+houseRouter.get("/find/:id", verifyToken, getHouse);
 houseRouter.put("/:id", verifyAdmin, updateHouse);
 houseRouter.delete("/:id", verifyAdmin, deleteHouse);
-houseRouter.post("/", createHouse);
+houseRouter.post("/", verifyToken , createHouse);
 houseRouter.get("/featured", getFeatured);
 houseRouter.get("/city/:city", getByName);
 
