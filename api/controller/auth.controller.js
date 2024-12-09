@@ -36,7 +36,6 @@ export const register = async (req, res) => {
 export const login = async (req, res) => {
   const { email, password } = req.body;
   try {
-    // Find user by email
     const user = await User.findOne({ email });
     if (!user) {
       return res.status(404).json({ message: "User not found" });
@@ -59,7 +58,7 @@ export const login = async (req, res) => {
       .cookie("access_token", token, {
         secure: process.env.NODE_ENV === "production",
         sameSite: "lax",
-        maxAge: 24 * 60 * 60 * 1000, // 24 hours
+        maxAge: 24 * 60 * 60 * 1000,
       })
       .status(200)
       .json({
@@ -97,7 +96,7 @@ export const verifyUser = async (req, res) => {
       }
       const user = await User.findById(data.id);
       if (user) {
-        res.json({ status: true, user: user.name , isAdmin: user.isAdmin});
+        res.json({ status: true, user: user.name, isAdmin: user.isAdmin });
       } else {
         res.json({ status: false });
       }

@@ -9,9 +9,9 @@ import { verifyAdmin } from "../middleware/auth.js";
 
 const userRouter = new Router();
 
-userRouter.get("/", getUsers); //GET ALL
-userRouter.get("/:id", verifyAdmin, getUser); //GET One
-userRouter.put("/:id", verifyAdmin, updateUser); //UPDATE
-userRouter.delete("/:id", verifyAdmin, deleteUser); //DELETE
+userRouter.get("/", getUsers);
+userRouter.get("/:id", verifyAdmin, getUser);
+userRouter.put("/:id", verifyAdmin, updateUser);
+userRouter.delete("/:id", verifyAdmin, deleteUser);
 
 export default userRouter;

@@ -33,7 +33,7 @@ function Navbar() {
     setUsername(null);
   };
   return (
-    <div className="navbar">
+    <nav className="navbar">
       <Link className="nav-link" to="/">
         <div className="logo">
           <p className="rental">Rental.</p>
@@ -72,7 +72,7 @@ function Navbar() {
           </>
         )}
       </div>
-    </div>
+    </nav>
   );
 }
 
